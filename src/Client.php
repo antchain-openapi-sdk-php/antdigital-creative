@@ -130,7 +130,7 @@ class Client {
                 "period" => Utils::defaultNumber($runtime->backoffPeriod, 1)
             ],
             "ignoreSSL" => $runtime->ignoreSSL,
-            // 用量信息
+            // 附加信息
         ];
         $_lastRequest = null;
         $_lastException = null;
@@ -157,7 +157,7 @@ class Client {
                     "req_msg_id" => UtilClient::getNonce(),
                     "access_key" => $this->_accessKeyId,
                     "base_sdk_version" => "TeaSDK-2.0",
-                    "sdk_version" => "1.0.5",
+                    "sdk_version" => "1.0.6",
                     "_prod_code" => "CREATIVE",
                     "_prod_channel" => "default"
                 ];
