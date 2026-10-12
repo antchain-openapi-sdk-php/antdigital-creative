@@ -9,6 +9,7 @@ class ExtraInfo extends Model {
     protected $_name = [
         'originalTaskId' => 'original_task_id',
         'originalVideoUrl' => 'original_video_url',
+        'originalResponseSnapshot' => 'original_response_snapshot',
     ];
     public function validate() {}
     public function toMap() {
@@ -18,6 +19,9 @@ class ExtraInfo extends Model {
         }
         if (null !== $this->originalVideoUrl) {
             $res['original_video_url'] = $this->originalVideoUrl;
+        }
+        if (null !== $this->originalResponseSnapshot) {
+            $res['original_response_snapshot'] = $this->originalResponseSnapshot;
         }
         return $res;
     }
@@ -32,6 +36,9 @@ class ExtraInfo extends Model {
         }
         if(isset($map['original_video_url'])){
             $model->originalVideoUrl = $map['original_video_url'];
+        }
+        if(isset($map['original_response_snapshot'])){
+            $model->originalResponseSnapshot = $map['original_response_snapshot'];
         }
         return $model;
     }
@@ -48,5 +55,12 @@ class ExtraInfo extends Model {
      * @var string
      */
     public $originalVideoUrl;
+
+    // 原厂响应体快照
+    /**
+     * @example "{"task_id":"csg-xxx-xx"...}"
+     * @var string
+     */
+    public $originalResponseSnapshot;
 
 }
